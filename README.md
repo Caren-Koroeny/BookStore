@@ -26,17 +26,27 @@
 > A bookstore app that allows a user add a book, displays added book with reviews and rating for each book and allows a user delete a book.
 ## 🛠 Built With <a name="built-with"></a>
 
+- HTML5
+- Javascript
 - React.js and CSS3
-- Frameworks
-- Netlify, Webpack, big.js, jest, Git and Babel.
-
+- Redux
+- API
+- Webpack
+- Linters
+- Webpack, big.js, jest, Git and Babel.
 
 <!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
-- **Make simple math calculation**
-- **Generate random math-related quote**
+- `Add a new book` allowing you to specify a book's:
+    `Author`
+
+    `Title`
+
+    `Genre`
+
+- `Remove a specific` book from the list**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
