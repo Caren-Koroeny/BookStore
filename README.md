@@ -39,6 +39,7 @@
 ### Key Features <a name="key-features"></a>
 
 - `Add a new book` allowing you to specify a book's:
+
     `Author`
 
     `Title`
@@ -125,11 +126,8 @@ npm run deploy
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Add good UI/UX]**
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
