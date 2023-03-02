@@ -23,7 +23,7 @@
 
 # BOOKSTORE
 
-> A bookstore app that allows a user add a book, displays added book with reviews and rating for each book and allows a user delete a book.
+> A bookstore app that allows a user add a book, displays added book with reviews and rating for each book and allows a user delete a book.Basically uses CRUD built with React and Redux.
 ## 🛠 Built With <a name="built-with"></a>
 
 - HTML5
