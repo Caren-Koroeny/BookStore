@@ -125,8 +125,10 @@ npm run deploy
 <!-- Features -->
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add good UI/UX]**
+- [ ] **Add good UI/UX**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 ## 🤝 Contributing <a name="contributing"></a>
 
