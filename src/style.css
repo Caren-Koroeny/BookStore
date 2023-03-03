@@ -34,13 +34,13 @@ body {
   text-decoration: none;
 }
 
-.user-logo{
-        width: 3%;
-        float: right;
-        margin-top: -55px;
-        padding-top: 0;
-    
+.user-logo {
+  width: 3%;
+  float: right;
+  margin-top: -55px;
+  padding-top: 0;
 }
+
 .card {
   display: flex;
   background-color: #e8e8e8;
