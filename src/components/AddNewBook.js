@@ -5,7 +5,7 @@ const AddBook = () => (
 
   <>
     <form>
-      <h1> ADD NEW BOOK</h1>
+      <h1 className="book-label" style={{ color: '#888888' }}> ADD NEW BOOK</h1>
       <div className={styles.form}>
         <input
           className={styles.inputstyle}

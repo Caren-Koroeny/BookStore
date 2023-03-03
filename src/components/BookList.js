@@ -9,7 +9,7 @@ const BookDetails = {
 };
 
 const BookList = () => (
-  <div>
+  <div className="book-holder" style={{ backgroundcolor: '#fff', padding: '4px' }}>
     <Book
       title={BookDetails.title}
       author={BookDetails.author}

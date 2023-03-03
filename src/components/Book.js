@@ -7,9 +7,9 @@ const Book = (obj) => {
   return (
     <div className="card">
       <div className="card-1">
-        <p>Action</p>
-        <p>{title}</p>
-        <p>{author}</p>
+        <p className="book-action">Action</p>
+        <p className="book-title">{title}</p>
+        <p className="book-author">{author}</p>
         <div className="activities">
           <p>Comments</p>
           <hr />
