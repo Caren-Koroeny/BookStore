@@ -5,20 +5,22 @@ const Book = (obj) => {
   const { title, author } = obj;
 
   return (
-    <div>
+    <div className="card">
       <div className="card-1">
         <p>Action</p>
         <p>{title}</p>
         <p>{author}</p>
-        <div>
+        <div className="activities">
           <p>Comments</p>
+          <hr />
           <p>Remove</p>
+          <hr />
           <p>Edit</p>
         </div>
       </div>
       <div className="card-2">
-        <p>64%</p>
-        <p>Completed</p>
+        <p className="percentage">64%</p>
+        <p className="complete">Completed</p>
       </div>
       <div className="card-3">
         <p style={{ textTransform: 'uppercase' }} className="chapter">chapter 17</p>

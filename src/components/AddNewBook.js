@@ -1,14 +1,15 @@
 import React from 'react';
-import styles from "../styles/AddBook.module.css"
+import styles from '../styles/AddBook.module.css';
+
 const AddBook = () => (
 
   <>
     <form>
-      <label> ADD NEW BOOK</label>
+      <h1> ADD NEW BOOK</h1>
       <div className={styles.form}>
         <input
           className={styles.inputstyle}
-          id="book-id"
+          id="temp-id"
           type="text"
           name="book-title"
           required
@@ -25,7 +26,7 @@ const AddBook = () => (
           style={{
             color: '#fff', border: 'none', padding: '0 30px', background: '#0290FF', borderRadius: '5px', cursor: 'pointer',
           }}
-          type="Submit"
+          type="submit"
         >
           Add Book
         </button>

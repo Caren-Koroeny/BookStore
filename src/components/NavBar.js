@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NavigationMenu = () => (
   <section className="header-container">
     <div className="header-section">
-      <h1>Bookstore CMS</h1>
+      <h1 style={{ color: '#0290ff' }}>Bookstore CMS</h1>
       <ul className="nav-links">
         <li className="link"><Link to="/">BOOKS</Link></li>
 
