@@ -1,12 +1,6 @@
 import React from "react";
 import styles from '../styles/AddBook.module.css';
 
-const form = {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-  };
-
 const AddBook = () => (
 
     <>
