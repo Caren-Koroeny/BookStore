@@ -5,13 +5,13 @@ import NavigationMenu from './components/NavBar';
 import Categories from './components/Categories';
 
 const App = () => (
-    <section className='mainContainer'>
+  <section className="mainContainer">
     <NavigationMenu />
     <Routes>
-    <Route path='/' exact element={<BookList />} />
-    <Route path='/category' exact element={<Categories />} />
+      <Route path="/" exact element={<BookList />} />
+      <Route path="/category" exact element={<Categories />} />
     </Routes>
-    </section>
+  </section>
 );
 
-export default App
+export default App;
