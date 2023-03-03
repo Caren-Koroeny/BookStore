@@ -11,6 +11,7 @@ const NavigationMenu = () => (
         <li className="link"><Link to="/category" style={{ opacity: '0.5' }}>CATEGORIES</Link></li>
       </ul>
     </div>
+    <img className="user-logo" src="https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png" alt="user" />
   </section>
 );
 
