@@ -11,10 +11,7 @@ body {
 .header-container {
   display: flex;
   flex-direction: column;
-  width: 87.5rem;
-  height: 5.938rem;
   margin: 0 0 2.375rem;
-  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
 }
 
 .header-section {
@@ -45,6 +42,9 @@ body {
   gap: 40px;
   padding: 3%;
   box-shadow: 0 0 2px #6e6e6e;
+}
+.card-2{
+    margin-left: -40px;
 }
 
 .book-action {
@@ -84,4 +84,11 @@ body {
 
 .complete {
   color: #a09a9a;
+}
+
+.hr {
+  color: #e8e8e8;
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 1.125rem 3.688rem 0 4.938rem;
 }
