@@ -36,9 +36,11 @@ body {
 
 .user-logo {
   width: 3%;
+  color: #0290ff;
   float: right;
   margin-top: -55px;
   padding-top: 0;
+  margin-left: 95%;
 }
 
 .card {
