@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  
+.inputstyle {
+    padding: 10px;
+    width: 28.5rem;
+    border: 1px solid #e8e8e8;
+    margin-right: 20px;
+  }
