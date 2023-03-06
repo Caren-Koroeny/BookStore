@@ -14,10 +14,13 @@ const bookReducer = (state = initialState, action ) => {
                 ...state,
                 books: [...state, action.book]
             };
-        
-        default:
-            return state;
-    }
+            case REMOVE_BOOK:
+                return {
+                  ...state,
+                  books: state.books.filter(book => book.id !== action.bookId)       
+    };
+    default:
+    return state;
 }
 
 // Action creators
