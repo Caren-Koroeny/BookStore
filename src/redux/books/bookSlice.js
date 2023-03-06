@@ -9,6 +9,11 @@ const initialState = {
 // Reducer
 const bookReducer = (state = initialState, action ) => {
     switch(action.type){
+        case ADD_BOOK:
+            return{
+                ...state,
+                books: [...state, action.book]
+            };
         
         default:
             return state;
