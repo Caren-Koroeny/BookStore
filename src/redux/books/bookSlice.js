@@ -21,6 +21,10 @@ const addBook = book => ({
     book
 });
 
+const removeBook = bookId => ({
+    type: REMOVE_BOOK,
+    bookId
+});
 
 //  create a Redux store 
 const store = createStore(bookReducer)
