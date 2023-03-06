@@ -7,7 +7,7 @@ const initialState = {
     booksArray : [],
 }
 // Reducer
-const bookReducer = (state = initialState, action ) => {
+const BookReducer = (state = initialState, action ) => {
     switch(action.type){
         case ADD_BOOK:
             return{
@@ -22,18 +22,17 @@ const bookReducer = (state = initialState, action ) => {
     default:
     return state;
 }
-
+};
 // Action creators
-const addBook = book => ({
+const AddBook = book => ({
     type: ADD_BOOK,
-    book
+    book,
 });
 
-const removeBook = bookId => ({
+const RemoveBook = bookId => ({
     type: REMOVE_BOOK,
-    bookId
+    bookId,
 });
 
-//  create a Redux store 
-const store = createStore(bookReducer)
+export { BookReducer, AddBook, RemoveBook}
 
