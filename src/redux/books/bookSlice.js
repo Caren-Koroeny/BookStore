@@ -1,3 +1,4 @@
+// action types
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
@@ -5,17 +6,21 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 const initialState = {
     booksArray : [],
 }
-
-// then define a reducer function that handles actions that modify the book state
-
+// Reducer
 const bookReducer = (state = initialState, action ) => {
     switch(action.type){
-        // Handle actions that modify the book state
-
+        
         default:
             return state;
     }
 }
+
+// Action creators
+const addBook = book => ({
+    type: ADD_BOOK,
+    book
+});
+
 
 //  create a Redux store 
 const store = createStore(bookReducer)
