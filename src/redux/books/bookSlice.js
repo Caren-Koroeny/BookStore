@@ -4,35 +4,34 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 
 // an empty array as the initial state
 const initialState = {
-    booksArray : [],
-}
+  booksArray: [],
+};
 // Reducer
-const BookReducer = (state = initialState, action ) => {
-    switch(action.type){
-        case ADD_BOOK:
-            return{
-                ...state,
-                books: [...state, action.book]
-            };
-            case REMOVE_BOOK:
-                return {
-                  ...state,
-                  books: state.books.filter(book => book.id !== action.bookId)       
-    };
+const BookReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_BOOK:
+      return {
+        ...state,
+        books: [...state, action.book],
+      };
+    case REMOVE_BOOK:
+      return {
+        ...state,
+        books: state.books.filter((book) => book.id !== action.bookId),
+      };
     default:
-    return state;
-}
+      return state;
+  }
 };
 // Action creators
-const AddBook = book => ({
-    type: ADD_BOOK,
-    book,
+const AddBook = (book) => ({
+  type: ADD_BOOK,
+  book,
 });
 
-const RemoveBook = bookId => ({
-    type: REMOVE_BOOK,
-    bookId,
+const RemoveBook = (bookId) => ({
+  type: REMOVE_BOOK,
+  bookId,
 });
 
-export { BookReducer, AddBook, RemoveBook}
-
+export { BookReducer, AddBook, RemoveBook };
