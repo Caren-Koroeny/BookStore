@@ -8,5 +8,6 @@ const categoriesSlice = createSlice({
     checkStatus: () => 'under construction',
   },
 });
+
 export const { checkStatus } = categoriesSlice.actions;
 export default categoriesSlice.reducer;
