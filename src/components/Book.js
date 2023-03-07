@@ -1,8 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import styles from '../styles/Book.module.css';
+import { RemoveBook } from '../redux/books/bookSlice';
 
 const Book = (obj) => {
-  const { title, author } = obj;
+  const { id, title, author } = obj;
+  const dispatch = useDispatch();
+  const RemoveBtn = () => {
+    dispatch(RemoveBook(id));
+  };
 
   return (
     <div className="card">
@@ -13,7 +19,7 @@ const Book = (obj) => {
         <div className="activities">
           <p>Comments</p>
           <hr />
-          <p>Remove</p>
+          <button type="button" onClick={() => RemoveBtn(id)}>Remove</button>
           <hr />
           <p>Edit</p>
         </div>
