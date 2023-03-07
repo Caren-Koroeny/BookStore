@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
   booksArray:
@@ -28,8 +28,14 @@ const bookSlice = createSlice({
   name: 'book',
   initialState,
   reducers: {
-    AddBook: (state, action) => {
-      state.booksArray.push(action.payload);
+    AddBooks: (state, action) => {
+      const newBook = {
+        id: nanoid(),
+        title: action.payload.title,
+        author: action.payload.author,
+      };
+
+      state.concat(newBook);
     },
     RemoveBook: (state, action) => {
       state.filter((book) => book.id !== action.payload.id);
@@ -37,6 +43,6 @@ const bookSlice = createSlice({
   },
 });
 
-export const { AddBook, RemoveBook } = bookSlice.actions;
+export const { AddBooks, RemoveBook } = bookSlice.actions;
 
 export default bookSlice.reducer;
