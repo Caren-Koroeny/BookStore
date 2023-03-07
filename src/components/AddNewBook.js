@@ -1,68 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/AddBook.module.css';
 import { AddBooks } from '../redux/books/bookSlice';
 
 const AddBook = () => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const DisplayBook = () => {
+    const titleInput = document.getElementById('book-title');
+    const authorInput = document.getElementById('book-author');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (title.trim() && author.trim()) {
-      dispatch(
-        AddBooks({
-          title,
-          author,
-          category: '',
-        }),
-      );
+    const title = titleInput.value;
+    const author = authorInput.value;
 
-      // reset title and author
-      setTitle('');
-      setAuthor('');
-      setErrorMessage('');
-    } else {
-      setErrorMessage('Book title and author can not be empty');
+    if (title !== '' && author !== '') {
+      dispatch(AddBooks({ id: uuidv4(), title, author }));
     }
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <h1 className="book-label" style={{ color: '#888888' }}> ADD NEW BOOK</h1>
         <div className={styles.form}>
           <input
             className={styles.inputstyle}
-            id="temp-id"
+            id="book-title"
             type="text"
             name="book-title"
-            value={title}
             required
-            onChange={(e) => setTitle(e.target.value)}
             placeholder="Book title"
           />
           <input
             className={styles.inputstyle}
+            id="book-author"
             type="text"
             name="book-author"
             required
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
             placeholder="Author"
           />
+
           <button
             style={{
               color: '#fff', border: 'none', padding: '0 30px', background: '#0290FF', borderRadius: '5px', cursor: 'pointer',
             }}
-            type="submit"
+            type="button"
             className="pointer"
+            onClick={() => {
+              DisplayBook();
+            }}
           >
             Add Book
           </button>
-          <span className="error">{errorMessage}</span>
         </div>
       </form>
     </>
