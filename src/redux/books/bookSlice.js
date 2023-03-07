@@ -35,10 +35,10 @@ const bookSlice = createSlice({
         author: action.payload.author,
       };
 
-      state.concat(newBook);
+      state.push(newBook);
     },
     RemoveBook: (state, action) => {
-      state.filter((book) => book.id !== action.payload.id);
+      state.filter((booksArray) => booksArray.id !== action.payload.id);
     },
   },
 });

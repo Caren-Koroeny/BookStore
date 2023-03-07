@@ -31,7 +31,7 @@ const AddBook = () => {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1 className="book-label" style={{ color: '#888888' }}> ADD NEW BOOK</h1>
         <div className={styles.form}>
           <input
@@ -59,7 +59,6 @@ const AddBook = () => {
             }}
             type="submit"
             className="pointer"
-            onClick={handleSubmit}
           >
             Add Book
           </button>

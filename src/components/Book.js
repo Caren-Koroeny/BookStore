@@ -3,8 +3,7 @@ import { useDispatch } from 'react-redux';
 import styles from '../styles/Book.module.css';
 import { RemoveBook } from '../redux/books/bookSlice';
 
-const Book = (obj) => {
-  const { id, title, author } = obj;
+const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
   const RemoveBtn = () => {
     dispatch(RemoveBook(id));
