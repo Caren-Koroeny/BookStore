@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/AddBook.module.css';
@@ -6,15 +6,28 @@ import { AddBooks } from '../redux/books/bookSlice';
 
 const AddBook = () => {
   const dispatch = useDispatch();
-  const DisplayBook = () => {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handleAuthorChange = (event) => {
+    setAuthor(event.target.value);
+  };
+
+  useEffect(() => {
     const titleInput = document.getElementById('book-title');
     const authorInput = document.getElementById('book-author');
 
-    const title = titleInput.value;
-    const author = authorInput.value;
+    setTitle(titleInput.value);
+    setAuthor(authorInput.value);
+  }, []);
 
+  const DisplayBook = () => {
     if (title !== '' && author !== '') {
-      dispatch(AddBooks({ id: uuidv4(), title, author }));
+      dispatch(AddBooks({ item_id: uuidv4(), title, author }));
     }
   };
 
@@ -30,6 +43,8 @@ const AddBook = () => {
             name="book-title"
             required
             placeholder="Book title"
+            value={title}
+            onChange={handleTitleChange}
           />
           <input
             className={styles.inputstyle}
@@ -38,8 +53,9 @@ const AddBook = () => {
             name="book-author"
             required
             placeholder="Author"
+            value={author}
+            onChange={handleAuthorChange}
           />
-
           <button
             style={{
               color: '#fff', border: 'none', padding: '0 30px', background: '#0290FF', borderRadius: '5px', cursor: 'pointer',
@@ -50,7 +66,7 @@ const AddBook = () => {
               DisplayBook();
             }}
           >
-            Add Book
+            Add Books
           </button>
         </div>
       </form>

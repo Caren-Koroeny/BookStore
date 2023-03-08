@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -5,19 +6,19 @@ const initialState = {
   // Initial state:
   [
     {
-      item_id: 'item1',
+      item_id: '1',
       title: 'The Great Gatsby',
       author: 'John Smith',
       category: 'Fiction',
     },
     {
-      item_id: 'item2',
+      item_id: '2',
       title: 'Anna Karenina',
       author: 'Leo Tolstoy',
       category: 'Fiction',
     },
     {
-      item_id: 'item3',
+      item_id: '3',
       title: 'The Selfish Gene',
       author: 'Richard Dawkins',
       category: 'Nonfiction',
@@ -25,21 +26,24 @@ const initialState = {
   ],
 };
 const bookSlice = createSlice({
-  name: 'book',
+  name: 'books',
   initialState,
   reducers: {
     AddBooks: (state, action) => {
       const newBook = {
-        id: nanoid(),
+        item_id: nanoid(),
         title: action.payload.title,
         author: action.payload.author,
       };
+      return {
+        ...state,
+        booksArray: [...state.booksArray, newBook],
+      };
+    },
+    RemoveBook: (state, { payload }) => {
+      state.booksArray = state.booksArray.filter((books) => books.item_id !== payload);
+    },
 
-      state.push(newBook);
-    },
-    RemoveBook: (state, action) => {
-      state.filter((booksArray) => booksArray.id !== action.payload.id);
-    },
   },
 });
 
