@@ -102,3 +102,13 @@ body {
   height: 4.375rem;
   margin: 1.125rem 3.688rem 0 4.938rem;
 }
+
+.add {
+  background: #0290ff;
+}
+
+.add:hover {
+  box-shadow: 0 0 6px #6e6e6e;
+  background: brown;
+  transition: all 0.5s ease-in-out;
+}

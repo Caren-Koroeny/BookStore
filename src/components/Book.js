@@ -16,7 +16,7 @@ const Book = ({ id, title, author }) => {
         <div className="activities">
           <p>Comments</p>
           <hr />
-          <button type="button" onClick={() => dispatch(RemoveBook(id))}>Remove</button>
+          <button type="button" className="add" onClick={() => dispatch(RemoveBook(id))}>Remove</button>
           <hr />
           <p>Edit</p>
         </div>
