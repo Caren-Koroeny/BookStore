@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, nanoid } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { AddBook, getBookData, RemoveBook } from './BookThunk';
+
 const initialState = {
   booksArray: [],
   error: false,

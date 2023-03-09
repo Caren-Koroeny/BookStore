@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import AddBook from './AddNewBook';
+import AddNewBooks from './AddNewBook';
 import Book from './Book';
 
 const BookList = () => {
@@ -18,7 +18,7 @@ const BookList = () => {
       ))
     }
       <hr className="horiz-break" />
-      <AddBook />
+      <AddNewBooks />
 
     </div>
   );

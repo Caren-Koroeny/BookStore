@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/AddBook.module.css';
-import { AddBooks } from '../redux/books/bookSlice';
+import { AddBook } from '../redux/books/BookThunk';
 
-const AddBook = () => {
+const AddNewBooks = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
@@ -27,7 +27,7 @@ const AddBook = () => {
 
   const DisplayBook = () => {
     if (title !== '' && author !== '') {
-      dispatch(AddBooks({
+      dispatch(AddBook({
         item_id: uuidv4(), title, author, category: '',
       }));
       setTitle('');
@@ -78,4 +78,4 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default AddNewBooks;
