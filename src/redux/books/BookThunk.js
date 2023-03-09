@@ -26,3 +26,17 @@ export const AddBook = createAsyncThunk('book/AddBook', async(data, thumkAPI) =>
         return thumkAPI.rejectWithValue('something went wrong');
     }
 });
+
+export const RemoveBook = createAsyncThunk('book/RemoveBook', async(id,thumkAPI) => {
+    try {
+        return fetch(URL + id, {
+            method: 'DELETE',
+            body:JSON.stringify({item_id: id }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        }).then(() => id);
+    }catch(error) {
+        return thumkAPI.rejectWithValue("something went wrong!")
+    }
+});
