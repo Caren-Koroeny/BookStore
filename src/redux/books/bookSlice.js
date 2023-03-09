@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, nanoid, createAsyncThunk } from '@reduxjs/toolkit';
+import { async } from 'q';
 
 
 const URL = 
@@ -30,6 +31,44 @@ const URL =
       }
     }
   );
+
+  // DELETE FROM API
+
+  export const RemoveBook =  createAsyncThunk("books/RemoveBook", async (id) =>{
+    const response = await axios.delete(`${URL}/books/${id}`);
+    return response.data;
+  });
+
+  const initialState = {
+  booksArray:[],
+  error:false,
+  };
+
+  let newBook;
+  const bookSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {
+    AddBooks: (state, action) => {
+      const newBook = {
+        item_id: nanoid(),
+        title: action.payload.title,
+        author: action.payload.author,
+      };
+      return {
+        ...state,
+        booksArray: [...state.booksArray, newBook],
+      };
+    },
+    RemoveBook: (state, { payload }) => {
+      state.booksArray = state.booksArray.filter((books) => books.item_id !== payload);
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getBooksData.fulfilled, (state, action))
+  }
+});
+
 // const initialState = {
 //   booksArray:
 //   // Initial state:
