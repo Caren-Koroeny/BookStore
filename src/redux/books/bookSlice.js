@@ -1,52 +1,53 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, nanoid } from '@reduxjs/toolkit';
-
+import { AddBook, getBookData, RemoveBook } from './BookThunk';
 const initialState = {
-  booksArray:
-  // Initial state:
-  [
-    {
-      item_id: '1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: '2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: '3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  booksArray: [],
+  error: false,
 };
 const bookSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    AddBooks: (state, action) => {
-      const newBook = {
-        item_id: nanoid(),
-        title: action.payload.title,
-        author: action.payload.author,
-      };
-      return {
-        ...state,
-        booksArray: [...state.booksArray, newBook],
-      };
+  extraReducers: {
+    [getBookData.fulfilled]: (state, action) => {
+      state.booksArray = action.payload;
     },
-    RemoveBook: (state, { payload }) => {
-      state.booksArray = state.booksArray.filter((books) => books.item_id !== payload);
+    [getBookData.rejected]: (state) => {
+      state.error = true;
     },
-
+    [AddBook.fulfilled]: (state, { payload }) => {
+      const {
+        title, author, category,
+      } = payload;
+      state.booksArray[payload.item_id] = [{
+        title,
+        author,
+        category,
+      }];
+    },
+    [RemoveBook.fulfilled]: (state, { payload }) => {
+      delete state.booksArray[payload];
+    },
   },
+
+  //   AddBooks: (state, action) => {
+  //     const newBook = {
+  //       item_id: nanoid(),
+  //       title: action.payload.title,
+  //       author: action.payload.author,
+  //     };
+  //     return {
+  //       ...state,
+  //       booksArray: [...state.booksArray, newBook],
+  //     };
+  //   },
+  //   RemoveBook: (state, { payload }) => {
+  //     state.booksArray = state.booksArray.filter((books) => books.item_id !== payload);
+  //   },
+
+  // },
 });
 
-export const { AddBooks, RemoveBook } = bookSlice.actions;
+// export const { AddBooks, RemoveBook } = bookSlice.actions;
 
 export default bookSlice.reducer;

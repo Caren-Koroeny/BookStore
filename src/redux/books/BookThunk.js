@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { async } from "q";
 
-const APIID = 'XiaYGiqqbyc8T2fksKKK';
+const APIKEY = 'XiaYGiqqbyc8T2fksKKK';
 const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApiapps/${APIKEY}/books/';
 
 export const getBookData = createAsyncThunk('book/getBookData', async() => {
