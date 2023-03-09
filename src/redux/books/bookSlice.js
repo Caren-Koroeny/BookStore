@@ -19,7 +19,6 @@ export const AddBooks = createAsyncThunk(
         ...payload,
         item_id: nanoid(),
       });
-
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(
@@ -65,6 +64,7 @@ const bookSlice = createSlice({
     builder.addCase(getBooksData.fulfilled, (state, action) => {
       const newBookArry = [];
       const resObj = action.payload;
+      console.log('Hi');
 
       // eslint-disable-next-line no-restricted-syntax, guard-for-in
       for (const key in resObj) {
