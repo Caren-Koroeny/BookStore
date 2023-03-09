@@ -28,7 +28,10 @@ const AddNewBooks = () => {
   const DisplayBook = () => {
     if (title !== '' && author !== '') {
       dispatch(AddBook({
-        item_id: uuidv4(), title, author, category: '',
+        item_id: uuidv4(),
+        title,
+        author,
+        category: '',
       }));
       setTitle('');
       setAuthor('');
