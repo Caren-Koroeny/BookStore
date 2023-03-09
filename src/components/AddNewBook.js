@@ -17,7 +17,6 @@ const AddBook = () => {
     setAuthor(event.target.value);
   };
 
- 
   const DisplayBook = () => {
     if (title !== '' && author !== '') {
       dispatch(postBooks({

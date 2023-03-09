@@ -45,19 +45,15 @@ const bookSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    postBooks: ( state,action) => {
+    postBooks: (state, action) => {
       newBook = {
         item_id: nanoid(),
         title: action.payload.title,
         author: action.payload.author,
       };
       state.booksArray.push(newBook);
-      // return {
-      //   ...state,
-      //   booksArray: [...state.booksArray, newBook],
-      // };
     },
-    RemoveBook: (state, { payload }) => {
+    deleteBook: (state, { payload }) => {
       state.booksArray = state.booksArray.filter((books) => books.item_id !== payload);
     },
   },
@@ -84,5 +80,5 @@ const bookSlice = createSlice({
   },
 });
 
-export const { postBooks } = bookSlice.actions;
+export const { postBooks, deleteBook } = bookSlice.actions;
 export default bookSlice.reducer;
