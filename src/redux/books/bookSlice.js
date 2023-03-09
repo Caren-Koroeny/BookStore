@@ -50,7 +50,7 @@ const URL =
   initialState,
   reducers: {
     AddBooks: (state, action) => {
-      const newBook = {
+      newBook = {
         item_id: nanoid(),
         title: action.payload.title,
         author: action.payload.author,
@@ -65,7 +65,27 @@ const URL =
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getBooksData.fulfilled, (state, action))
+    builder.addCase(getBooksData.fulfilled, (state, action) => {
+      const newBookArry = [];
+      const resObj = action.payload;
+
+      // eslint-disable-next-line no-restricted-syntax, guard-for-in
+      for (const key in resObj) {
+        const itemObj = resObj[key][0];
+        itemObj.item_id = key;
+        newBookArry.push(itemObj);
+      }
+      state.booksArray = newBookArry;
+    });
+      builder
+      .addCase(AddBooks.fulfilled, (state) => {
+        state.error = true;
+        state.booksArray.push(newBook);
+      })
+      .addCase(AddBooks.rejected, (state)=> {
+        state.error = false;
+      })
+ 
   }
 });
 
