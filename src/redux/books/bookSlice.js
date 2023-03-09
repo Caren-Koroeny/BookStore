@@ -45,16 +45,17 @@ const bookSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
-    AddBooks: (state, action) => {
+    postBooks: ( state,action) => {
       newBook = {
         item_id: nanoid(),
         title: action.payload.title,
         author: action.payload.author,
       };
-      return {
-        ...state,
-        booksArray: [...state.booksArray, newBook],
-      };
+      state.booksArray.push(newBook);
+      // return {
+      //   ...state,
+      //   booksArray: [...state.booksArray, newBook],
+      // };
     },
     RemoveBook: (state, { payload }) => {
       state.booksArray = state.booksArray.filter((books) => books.item_id !== payload);
@@ -65,7 +66,6 @@ const bookSlice = createSlice({
       const newBookArry = [];
       const resObj = action.payload;
       console.log('Hi');
-
       // eslint-disable-next-line no-restricted-syntax, guard-for-in
       for (const key in resObj) {
         const itemObj = resObj[key][0];
@@ -77,7 +77,6 @@ const bookSlice = createSlice({
     builder
       .addCase(AddBooks.fulfilled, (state) => {
         state.error = true;
-        state.booksArray.push(newBook);
       })
       .addCase(AddBooks.rejected, (state) => {
         state.error = false;
@@ -85,4 +84,5 @@ const bookSlice = createSlice({
   },
 });
 
+export const { postBooks } = bookSlice.actions;
 export default bookSlice.reducer;

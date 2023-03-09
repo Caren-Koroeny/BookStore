@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/AddBook.module.css';
-import { AddBooks } from '../redux/books/bookSlice';
+import { AddBooks, postBooks } from '../redux/books/bookSlice';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -17,19 +17,18 @@ const AddBook = () => {
     setAuthor(event.target.value);
   };
 
-  useEffect(() => {
-    const titleInput = document.getElementById('book-title');
-    const authorInput = document.getElementById('book-author');
-
-    setTitle(titleInput.value);
-    setAuthor(authorInput.value);
-  }, []);
-
+ 
   const DisplayBook = () => {
     if (title !== '' && author !== '') {
-      dispatch(AddBooks({
-        item_id: uuidv4(), title, author, category: '',
+      dispatch(postBooks({
+        title,
+        author,
+        category: '',
       }));
+      dispatch(AddBooks({
+        item_id: nanoid(), title, author, category: '',
+      }));
+      console.log('Hello');
       setTitle('');
       setAuthor('');
     }
