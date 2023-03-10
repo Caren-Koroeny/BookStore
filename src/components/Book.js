@@ -12,32 +12,34 @@ const Book = ({ id, title, author }) => {
   };
 
   return (
-    <div className="card">
-      <div className="card-1">
-        <p className="book-action">Action</p>
-        <p className="book-title">{title}</p>
-        <p className="book-author">{author}</p>
-        <div className="activities">
-          <p>Comments</p>
-          <hr />
+    <li className={styles.book}>
+      <div className={styles.details}>
+        <span className={styles.category}>category</span>
+        <h2>{title}</h2>
+        <span className={styles.author}>{author}</span>
+        <div className={styles.action}>
+          <button type="button">Comments</button>
           <button type="button" className="add" data-id={id} onClick={onDeleteHandler}>
             Remove
           </button>
-          <hr />
-          <p>Edit</p>
+          <button type="button">Edit</button>
         </div>
       </div>
-      <div className="card-2">
-        <p className="percentage">64%</p>
-        <p className="complete">Completed</p>
+      <div className="complete-graph">
+        <div className="oval" />
+        <div className="complete-percent">
+          <span className="percentage">80%</span>
+          <p className="completed">completed</p>
+        </div>
+
+        <div className={styles.chapter}>
+          <h3>CURRENT CHAPTER</h3>
+          <p>Chapter 17</p>
+          <button type="button" className="btn">UPDATE PROGRESS</button>
+        </div>
       </div>
-      <div className="hr" style={{ color: 'black' }} />
-      <div className="card-3">
-        <p style={{ opacity: 0.5, fontSize: '13px' }}>CURRENT CHAPTER</p>
-        <p style={{ textTransform: 'uppercase' }} className="chapter">chapter 17</p>
-        <button type="button" style={{ textTransform: 'uppercase' }} className={styles.bookupdate}>Update Progress   </button>
-      </div>
-    </div>
+    </li>
+
   );
 };
 
