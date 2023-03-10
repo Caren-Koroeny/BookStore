@@ -14,34 +14,29 @@ const Book = ({ id, title, author }) => {
   };
 
   return (
-    <div className="card">
-      <div className="card-1">
-      <span className={styles.category}>Category</span>
-        <p className="book-action">Action</p>
-        <p className="book-title">{title}</p>
-        <p className="book-author">{author}</p>
-        <div className="activities">
-          <p>Comments</p>
-          <hr />
+    <li className={styles.book}>
+    <div className={styles.details}>
+      <span className={styles.category}>category</span>
+      <h2>{title}</h2>
+      <span className={styles.author}>{author}</span>
+      <div className={styles.action}>
+        <button type="button">Comments</button>
           <button type="button" className="add" data-id={id} onClick={onDeleteHandler}>
-            Remove
-          </button>
-          <hr />
-          <p>Edit</p>
-        </div>
-      </div>
-      <div className="card-2">
-      <div className={styles.progress}>
-      <ProgressBar percentage={percentage} />
-      
-      <div className="hr" style={{ color: 'black' }} />
-        <p style={{ opacity: 0.5, fontSize: '13px' }}>CURRENT CHAPTER</p>
-        <p style={{ textTransform: 'uppercase' }} className="chapter">chapter 17</p>
-        <button type="button" style={{ textTransform: 'uppercase' }} className={styles.bookupdate}>Update Progress   </button>
+             Remove</button>
+               <button type="button">Edit</button>
+               </div>
+             </div>
+             <div className={styles.progress}>
+             <ProgressBar percentage={percentage} />
      
-      </div>
-    </div>
-    </div>
+             <div className={styles.chapter}>
+               <h3>CURRENT CHAPTER</h3>
+               <p>Chapter 17</p>
+               <button type="button" className="btn">UPDATE PROGRESS</button>
+             </div>
+           </div>
+         </li>
+   
   );
 };
 
