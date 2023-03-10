@@ -85,13 +85,6 @@ body {
   font-weight: 300;
 }
 
-.percentage {
-  width: 50%;
-  width: 4.25rem;
-  height: 2.438rem;
-  margin: 0.063rem 5.75rem 0 0.688rem;
-}
-
 .complete {
   color: #a09a9a;
 }
@@ -109,13 +102,13 @@ body {
 
 .add:hover {
   box-shadow: 0 0 6px #6e6e6e;
-  background: brown;
+  background: rgb(32, 160, 199);
   transition: all 0.5s ease-in-out;
 }
 
 .btn {
   border-radius: 3px;
-  background-color:rgb(2, 144, 255);
+  background-color: rgb(2, 144, 255);
   color: #fff;
   font-size: 0.813rem;
   font-weight: 300;
