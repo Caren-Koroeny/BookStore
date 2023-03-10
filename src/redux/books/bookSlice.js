@@ -62,7 +62,6 @@ const bookSlice = createSlice({
     builder.addCase(getBooksData.fulfilled, (state, action) => {
       const newBookArry = [];
       const resObj = action.payload;
-      console.log('Hi');
       // eslint-disable-next-line no-restricted-syntax, guard-for-in
       for (const key in resObj) {
         const itemObj = resObj[key][0];

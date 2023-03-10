@@ -10,7 +10,6 @@ const BookList = () => {
   useEffect(() => {
     dispatch(getBooksData());
   }, [dispatch]);
-  console.log('booksArray:', booksArray);
   return (
     <div className="book-holder" style={{ backgroundcolor: '#fff', padding: '4px' }}>
       {booksArray && booksArray.map((books) => {

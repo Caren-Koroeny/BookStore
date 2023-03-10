@@ -27,7 +27,6 @@ const AddBook = () => {
       dispatch(AddBooks({
         item_id: nanoid(), title, author, category: '',
       }));
-      console.log('Hello');
       setTitle('');
       setAuthor('');
     }
