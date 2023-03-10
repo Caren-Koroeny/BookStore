@@ -115,11 +115,43 @@ body {
 
 .btn {
   border-radius: 3px;
-  background-color: blue;
+  background-color:rgb(2, 144, 255);
   color: #fff;
   font-size: 0.813rem;
   font-weight: 300;
   border: 0;
   padding: 10px 25px;
   cursor: pointer;
+}
+
+.complete-graph {
+  display: flex;
+  gap: 1rem;
+}
+
+.oval {
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 5px solid #379cf6;
+  border-left-color: #e8e8e8;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.complete-percent {
+  display: flex;
+  flex-direction: column;
+}
+
+.percentage {
+  color: black;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+.completed {
+  color: rgb(0, 0, 0, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
 }

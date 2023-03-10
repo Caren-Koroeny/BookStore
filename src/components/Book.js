@@ -2,11 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styles from '../styles/Book.module.css';
 import { RemoveBook, deleteBook } from '../redux/books/bookSlice';
-import ProgressBar from './Progress';
 
 const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
-  const percentage = 74;
   const onDeleteHandler = (e) => {
     const { id } = e.target.dataset;
     dispatch(RemoveBook(id));
@@ -26,9 +24,13 @@ const Book = ({ id, title, author }) => {
                <button type="button">Edit</button>
                </div>
              </div>
-             <div className={styles.progress}>
-             <ProgressBar percentage={percentage} />
-     
+             <div className="complete-graph">
+               <div className="oval" />
+               <div className="complete-percent">
+                 <span className="percentage">80%</span>
+                 <p className="completed">completed</p>
+               </div>
+         
              <div className={styles.chapter}>
                <h3>CURRENT CHAPTER</h3>
                <p>Chapter 17</p>
