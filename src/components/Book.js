@@ -22,7 +22,7 @@ const Book = ({ id, title, author }) => {
       <div className={styles.action}>
         <button type="button">Comments</button>
           <button type="button" className="add" data-id={id} onClick={onDeleteHandler}>
-             Remove</button>
+          Remove</button>
                <button type="button">Edit</button>
                </div>
              </div>

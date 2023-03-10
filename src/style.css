@@ -112,3 +112,14 @@ body {
   background: brown;
   transition: all 0.5s ease-in-out;
 }
+
+.btn {
+  border-radius: 3px;
+  background-color: blue;
+  color: #fff;
+  font-size: 0.813rem;
+  font-weight: 300;
+  border: 0;
+  padding: 10px 25px;
+  cursor: pointer;
+}

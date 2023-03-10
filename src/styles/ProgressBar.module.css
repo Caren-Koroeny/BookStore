@@ -3,18 +3,19 @@
   align-items: center;
   border-right: 1px solid #e8e8e8;
   padding-right: 10px;
+  border: #121212;
 }
 
 .progress .chart {
   width: 70px;
   height: 70px;
   padding-right: 20px;
+  background-color: blue;
 }
 
 .progress .progressValue h3 {
   margin: 0;
   color: #121212;
-  font-family: Montserrat, sans-serif;
   font-size: 2rem;
   font-weight: normal;
 }
