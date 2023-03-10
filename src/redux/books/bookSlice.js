@@ -38,6 +38,7 @@ export const RemoveBook = createAsyncThunk('books/RemoveBook', async (id) => {
 const initialState = {
   booksArray: [],
   error: false,
+  status: 'idle',
 };
 
 let newBook;
@@ -76,6 +77,18 @@ const bookSlice = createSlice({
       })
       .addCase(AddBooks.rejected, (state) => {
         state.error = false;
+      });
+    builder
+      .addCase(RemoveBook.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(RemoveBook.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.booksArray = state.booksArray.filter((book) => book.item_id !== action.payload);
+      })
+      .addCase(RemoveBook.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
       });
   },
 });
